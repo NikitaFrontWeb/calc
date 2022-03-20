@@ -1,8 +1,9 @@
 body{
   margin: 0;
   padding: 0;
-  background-color: #000;
+  background-color: #444;
   font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .calc{
@@ -12,7 +13,7 @@ body{
   transform: translate(-50%, -50%);
   height: 600px;
   width: 400px;
-  background-color: #c0c0c0;
+  background-color: #000;
   border-radius: 20px;
 }
 
@@ -37,16 +38,37 @@ body{
 }
 
 .calc__buttons-item{
-  width: 100px;
+  width: 94px;
   height: 85px;
   background-color: #272727;
   text-align: center;
   line-height: 85px;
   margin: 0 1px 1px 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.calc__buttons-corner{
+  position: relative;
+}
+
+.calc__buttons-item:hover{
+  background-color: #333;
+  transition: all .6s;
+}
+
+.calc__buttons-item-icon{
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .calc__buttons-item--left-top{
   border-radius: 10px 0 0 0;
+  font-family: 'Lato', sans-serif;
 }
 
 .calc__buttons-item--right-top{
@@ -60,4 +82,3 @@ body{
 .calc__buttons-item--left-bottom{
   border-radius: 0 0 0 10px;
 }
-
