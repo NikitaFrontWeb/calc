@@ -25,6 +25,15 @@ body{
   border-radius: 10px;
 }
 
+.calc__window-symbol{
+  font-size: 80px;
+  line-height: 140px;
+  text-align: right;
+  color: #fff;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
 .calc__buttons{
   display: flex;
   flex-direction: column;
