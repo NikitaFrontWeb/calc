@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>calc3</title>
+    <style>input{width: 100px;height: 60px;font-size: 35px;}</style>
+</head>
+<body>
+  <table style="height: 350px; width: 270px; padding-top: 50px; margin: 0 auto;">
+    <tr>
+      <td colspan="4">
+          <input type="text" id="expression" style="height: 60px; width: 410px; font-size: 40px;" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+          <input type="text" id="result" style="height: 60px; width: 410px; font-size: 40px;" />
+      </td>
+    </tr>
+    <tr>
+      <td> <input type="button" id="btn_clear" value="C" onclick="clearAll()" /></td>
+      <td> <input type="button" id="btn_(" value="("onclick="inputExp('(')" /></td>
+      <td> <input type="button" id="btn_)" value=")" onclick="inputExp(')')" /></td>
+      <td> <input type="button" id="btn_/" value="/" onclick="inputExp('/')" /></td>
+    </tr>
+    <tr>
+      <td> <input type="button" id="btn_7" value="7" onclick="inputExp('7')" /></td>
+      <td> <input type="button" id="btn_8" value="8" onclick="inputExp('8')" /></td>
+      <td> <input type="button" id="btn_9" value="9" onclick="inputExp('9')" /></td>
+      <td> <input type="button" id="btn_*" value="*" onclick="inputExp('*')" /></td>
+    </tr>
+    <tr>
+      <td> <input type="button" id="btn_4" value="4" onclick="inputExp('4')" /></td>
+      <td> <input type="button" id="btn_5" value="5" onclick="inputExp('5')" /></td>
+      <td> <input type="button" id="btn_6" value="6" onclick="inputExp('6')" /></td>
+      <td> <input type="button" id="btn_-" value="-" onclick="inputExp('-')" /></td>
+    </tr>
+    <tr>
+      <td> <input type="button" id="btn_1" value="1" onclick="inputExp('1')" /></td>
+      <td> <input type="button" id="btn_2" value="2" onclick="inputExp('2')" /></td>
+      <td> <input type="button" id="btn_3" value="3" onclick="inputExp('3')" /></td>
+      <td> <input type="button" id="btn_+" value="+" onclick="inputExp('+')" /></td>
+    </tr>
+    <tr>
+      <td> <input type="button" id="btn_=" value="=" onclick=" giveResult()" /></td>
+      <td> <input type="button" id="btn_0" value="0" onclick=" inputExp('0')" /></td>
+      <td> <input type="button" id="btn_." value="." onclick=" inputExp('.')" /></td>
+      <td> <input type="button" id="btn_del" value="Del" onclick="deleteSymbol()" /></td>
+    </tr>
+  </table>
+  <a href="./calc1.html" style="display: inline-block; width: 100px; height: 50px; background-color: rgb(45, 195, 209); text-decoration: none; font-size: 2rem; line-height: 50px; text-align: center;">1</a>
+  <a href="./calc2.html" style="display: inline-block; width: 100px; height: 50px; background-color: rgb(45, 195, 209); text-decoration: none; font-size: 2rem; line-height: 50px; text-align: center;">2</a>
+    
+  <script type="text/javascript">
+    let ele; // Используется для получения компонентов
+    let resultOfExp;
+    //  Очистить весь контент
+    function clearAll() {
+      ele = document.getElementById("expression");
+      ele.value = "";
+      ele = document.getElementById("result")
+      ele.value = "";
+    }
+    // Объединить символ, соответствующий кнопке, в выражение 
+    function inputExp(symbol) {
+      ele = document.getElementById("expression");
+      ele.value += symbol;
+    }
+    // Рассчитать результат 
+    function giveResult() {
+      ele = document.getElementById("expression");
+      resultOfExp = eval(ele.value);
+      ele = document.getElementById("result");
+      ele.value = resultOfExp;
+    }
+    // Удалить по одному 
+    function deleteSymbol() {
+      ele = document.getElementById("expression");
+      var exp = ele.value;
+      var end = exp.length - 1;
+      exp = ele.value.slice(0, end);
+      ele.value = exp;
+    }
+  </script>
+</body>
+</html>
